@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<service name="Plugin_MarketPhone_PhoneService" provider="java:RPC" style="rpc" use="encoded">
+		<parameter name="allowedMethods" value="*" />
+		<parameter name="className" value="br.liferay.marketphone.service.http.PhoneServiceSoap" />
+		<parameter name="typeMappingVersion" value="1.2" />
+		<parameter name="wsdlPortType" value="PhoneServiceSoap" />
+		<parameter name="wsdlServiceElement" value="PhoneServiceSoapService" />
+		<parameter name="wsdlServicePort" value="Plugin_MarketPhone_PhoneService" />
+		<parameter name="wsdlTargetNamespace" value="urn:http.service.marketphone.liferay.br" />
+	</service>
+</deployment>

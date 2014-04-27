@@ -1,0 +1,20 @@
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+
+<service-builder package-path="br.liferay.marketphone">
+	<namespace>MarketPhone</namespace>
+    <entity name="Phone" local-service="true" human-name="Phone" table="MARKETPHONE_PHONE">
+        <column name="idPhone" type="long" primary="true" db-name="IDPHONE" id-type="increment"></column>
+        <column name="name" type="String" localized="true" db-name="NAME"></column>
+        <column name="brand" type="String" db-name="BRAND"></column>
+        <column name="description" type="String" db-name="DESCRIPTION" localized="true"></column>
+        <column name="releaseDate" type="Date" db-name="RELEASEDATE"></column>
+        <column name="price" type="double" db-name="PRICE"></column>
+        <column name="imgUrl" type="String" db-name="IMGURL"></column>
+        <order by="asc">
+            <order-column name="name" case-sensitive="true"></order-column>
+        </order>
+        <finder name="Name" return-type="Collection">
+            <finder-column name="name"></finder-column>
+        </finder>
+    </entity>
+</service-builder>

@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="br.liferay.marketphone.model.impl.PhoneModelImpl">
+		<attributes>
+			<id name="idPhone">
+				<column name="IDPHONE" />
+			</id>
+			<basic name="name">
+				<column name="NAME" />
+			</basic>
+			<basic name="brand">
+				<column name="BRAND" />
+			</basic>
+			<basic name="description">
+				<column name="DESCRIPTION" />
+			</basic>
+			<basic name="releaseDate">
+				<column name="RELEASEDATE" />
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="price">
+				<column name="PRICE" />
+			</basic>
+			<basic name="imgUrl">
+				<column name="IMGURL" />
+			</basic>
+			<transient name="descriptionCurrentLanguageId" />
+			<transient name="descriptionMap" />
+			<transient name="modelAttributes" />
+			<transient name="nameCurrentLanguageId" />
+			<transient name="nameMap" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="br.liferay.marketphone.model.impl.PhoneImpl" name="Phone">
+		<table name="MARKETPHONE_PHONE" />
+		<attributes />
+	</entity>
+</entity-mappings>

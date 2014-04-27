@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="br.liferay.marketphone.model.Phone" />
+	<class name="br.liferay.marketphone.model.impl.PhoneImpl" table="MARKETPHONE_PHONE">
+		<cache usage="read-write" />
+		<id name="idPhone" column="IDPHONE" type="long">
+			<generator class="increment" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" column="NAME" />
+		<property name="brand" type="com.liferay.portal.dao.orm.hibernate.StringType" column="BRAND" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" column="DESCRIPTION" />
+		<property name="releaseDate" type="org.hibernate.type.TimestampType" column="RELEASEDATE" />
+		<property name="price" type="com.liferay.portal.dao.orm.hibernate.DoubleType" column="PRICE" />
+		<property name="imgUrl" type="com.liferay.portal.dao.orm.hibernate.StringType" column="IMGURL" />
+	</class>
+</hibernate-mapping>

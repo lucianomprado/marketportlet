@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:p="http://primefaces.org/ui" 
+      xmlns:c="http://java.sun.com/jsp/jstl/core" >
+<h:body>
+	<h:form>
+		<c:if test="#{phoneList.phone.idPhone == 0}" >
+			<h2><h:outputText  value="#{msg['add']}"></h:outputText></h2>
+		</c:if>
+		 <c:if test="#{phoneList.phone.idPhone > 0}">
+			<h2><h:outputText value="#{msg['edit.phone']}"></h:outputText></h2>
+		</c:if>
+		<p:fieldset legend="#{msg['phone']}">
+			<h:panelGrid columns="2">
+				<h:outputLabel for="name" value="#{msg['name']}"/>
+				<h:inputText id="name" value="#{phoneList.phone.name}"/>
+				<h:outputLabel for="brand" value="#{msg['brand']}"/>
+				<h:inputText id="brand" value="#{phoneList.phone.brand}"/>
+				<h:outputLabel for="price" value="#{msg['price']}"/>
+				<h:inputText id="price" value="#{phoneList.phone.price}"/>
+				<h:outputLabel for="releaseDate" value="#{msg['releaseDate']}"/>
+				<h:inputText value="#{phoneList.phone.releaseDate}" id="releaseDate">
+					<f:convertDateTime pattern="dd/MM/yyyy" />
+				</h:inputText>
+				<h:outputLabel for="description" value="#{msg['description']}" />
+				<h:inputTextarea id="description" value="#{phoneList.phone.description}"/>
+			</h:panelGrid>
+			<h:commandLink value="#{msg['add']}" action="#{phoneList.save}"></h:commandLink>
+		</p:fieldset>
+	</h:form>
+</h:body>
+</html>

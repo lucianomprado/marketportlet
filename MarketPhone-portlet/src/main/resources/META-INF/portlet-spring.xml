@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="br.liferay.marketphone.service.PhoneLocalService" class="br.liferay.marketphone.service.impl.PhoneLocalServiceImpl" />
+	<bean id="br.liferay.marketphone.service.PhoneService" class="br.liferay.marketphone.service.impl.PhoneServiceImpl" />
+	<bean id="br.liferay.marketphone.service.persistence.PhonePersistence" class="br.liferay.marketphone.service.persistence.PhonePersistenceImpl" parent="basePersistence" />
+</beans>

@@ -1,0 +1,9 @@
+create table MARKETPHONE_PHONE (
+	IDPHONE LONG not null primary key,
+	NAME STRING null,
+	BRAND VARCHAR(75) null,
+	DESCRIPTION STRING null,
+	RELEASEDATE DATE null,
+	PRICE DOUBLE,
+	IMGURL VARCHAR(75) null
+);

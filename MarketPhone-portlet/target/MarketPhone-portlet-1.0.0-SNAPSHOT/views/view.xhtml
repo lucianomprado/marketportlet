@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<f:view
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+>
+	<h:head />
+	<h:body styleClass="jsf2-portlet ltr">
+		<h:form>
+			<c:if test="#{phoneList.count > 0}">
+				<h:dataTable columns="4" value="#{phoneList.phonesList}" var="phone"  id="listPhones" cellpadding="2px" >
+					<h:column>
+						<f:facet name="header"><h:outputText value="#{msg['name']}"/></f:facet>
+						#{phone.name}
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputText value="#{msg['brand']}"/></f:facet>
+						#{phone.brand}
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputText value="#{msg['price']}"/></f:facet>
+						#{phone.price}
+					</h:column>
+					<h:column>
+						<f:facet name="header"><h:outputText value="#{msg['Action']}"/></f:facet>
+						<h:commandLink value="#{msg['edit']}" action="#{phoneList.edit}"><f:param name="idPhone" value="#{phone.idPhone}"/></h:commandLink>
+						<h:outputText value="  "></h:outputText>
+						<p:commandLink value="#{msg['delete']}" onclick="$(this).parents('tr').remove();" action="#{phoneList.delete}"><f:param name="idPhone" value="#{phone.idPhone}"/></p:commandLink>
+					</h:column>
+				</h:dataTable>
+			</c:if>
+			<h:commandLink value="#{msg['add']}" action="#{phoneList.edit}"/>
+		</h:form>
+	</h:body>
+</f:view>

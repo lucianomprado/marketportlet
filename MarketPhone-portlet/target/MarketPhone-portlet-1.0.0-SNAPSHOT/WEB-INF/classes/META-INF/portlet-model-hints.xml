@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="br.liferay.marketphone.model.Phone">
+		<field name="idPhone" type="long" />
+		<field name="name" type="String" localized="true" />
+		<field name="brand" type="String" />
+		<field name="description" type="String" localized="true" />
+		<field name="releaseDate" type="Date" />
+		<field name="price" type="double" />
+		<field name="imgUrl" type="String" />
+	</model>
+</model-hints>
